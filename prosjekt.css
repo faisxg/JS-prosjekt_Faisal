@@ -3,71 +3,97 @@ html, body {
     padding: 0;
 }
 
-/* tok litt inspirasjon fra løsningsforslaget til prøven vi hadde*/
+/* tok inspirasjon fra et av css-grid eksemplene når jeg skulle fikse bakgrunn, mer spesifikt grid2 */
+
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url(bilder/wood2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 header{
-    padding: 2rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
 }
 
 main {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 footer {
-    padding: 1rem;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: auto;
 }
+
+h1, p, #Switch{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p{
+    background-color: white; 
+    border: 1px solid black;
+    margin: 0;
+    padding: 1rem;
+}
+
 
 
 /* W3schools hjalp litt med borders: https://www.w3schools.com/css/css_border_color.asp , https://www.w3schools.com/css/css_border_width.asp */
 
-#hvit1 {grid-area: a; border-color: black white black black; border-style: solid; border-width: 1px; display: flex; justify-content: center;}
-#hvit2 {grid-area: b; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center;}
-#hvit3 {grid-area: c; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center;}
-#hvit4 {grid-area: d; border-color: black white black black; border-style: solid; border-width: 1px; display: flex; justify-content: center;}
-#hvit5 {grid-area: e; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center;}
-#hvit6 {grid-area: f; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center;}
-#hvit7 {grid-area: g; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center;}
-#hvit8 {grid-area: h; border-color: black white black black; border-style: solid; border-width: 1px; display: flex; justify-content: center;}
-#hvit9 {grid-area: i; border-color: black black black white; border-style: solid; border-width: 1px; display: flex; justify-content: center;}
+#hvit1 {grid-area: a; border-color: black white black black; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
+#hvit2 {grid-area: b; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
+#hvit3 {grid-area: c; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
+#hvit4 {grid-area: d; border-color: black white black black; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
+#hvit5 {grid-area: e; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
+#hvit6 {grid-area: f; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
+#hvit7 {grid-area: g; border-color: black white black white; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
+#hvit8 {grid-area: h; border-color: black white black black; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
+#hvit9 {grid-area: i; border-color: black black black white; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
 
-#hvit_1 {grid-area: a_; border-color: white black black white; border-style: solid; border-width: 1px;}
+#hvit_1 {grid-area: a_; border-color: white black black white; border-style: solid; border-width: 1px; background-color: white;}
 
-#hvit_2-1 {grid-area: b-; border-color: white white black white; border-style: solid; border-width: 1px;}
-#hvit_2-2 {grid-area: b_; border-color: white black black white; border-style: solid; border-width: 1px;}
+#hvit_2-1 {grid-area: b-; border-color: white white black white; border-style: solid; border-width: 1px; background-color: white;}
+#hvit_2-2 {grid-area: b_; border-color: white black black white; border-style: solid; border-width: 1px; background-color: white;}
 
-#hvit_3 {grid-area: c-; border-color: white white black white; border-style: solid; border-width: 1px;}
+#hvit_3 {grid-area: c-; border-color: white white black white; border-style: solid; border-width: 1px; background-color: white;}
 
-#hvit_4 {grid-area: d_; border-color: white black black white; border-style: solid; border-width: 1px;}
+#hvit_4 {grid-area: d_; border-color: white black black white; border-style: solid; border-width: 1px; background-color: white;}
 
-#hvit_5-1 {grid-area: e-; border-color: white white black white; border-style: solid; border-width: 1px;}
-#hvit_5-2 {grid-area: e_; border-color: white black black white; border-style: solid; border-width: 1px;}
+#hvit_5-1 {grid-area: e-; border-color: white white black white; border-style: solid; border-width: 1px; background-color: white;}
+#hvit_5-2 {grid-area: e_; border-color: white black black white; border-style: solid; border-width: 1px; background-color: white;}
 
-#hvit_6-1 {grid-area: f-; border-color: white white black white; border-style: solid; border-width: 1px;}
-#hvit_6-2 {grid-area: f_; border-color: white black black white; border-style: solid; border-width: 1px;}
+#hvit_6-1 {grid-area: f-; border-color: white white black white; border-style: solid; border-width: 1px; background-color: white;}
+#hvit_6-2 {grid-area: f_; border-color: white black black white; border-style: solid; border-width: 1px; background-color: white;}
 
-#hvit_7 {grid-area: g-; border-color: white white black white; border-style: solid; border-width: 1px;}
+#hvit_7 {grid-area: g-; border-color: white white black white; border-style: solid; border-width: 1px; background-color: white;}
 
-#hvit_8 {grid-area: h_; border-color: white black black white; border-style: solid; border-width: 1px;}
+#hvit_8 {grid-area: h_; border-color: white black black white; border-style: solid; border-width: 1px; background-color: white;}
 
-#hvit_9 {grid-area: i-; border-color: white white black white; border-style: solid; border-width: 1px;}
+#hvit_9 {grid-area: i-; border-color: white white black white; border-style: solid; border-width: 1px; background-color: white;}
 
 
-#svart1 {grid-area: j; background-color: black; color: white; display: flex; justify-content: center;}
-#svart2 {grid-area: k; background-color: black; color: white; display: flex; justify-content: center;}
-#svart3 {grid-area: l; background-color: black; color: white; display: flex; justify-content: center;}
-#svart4 {grid-area: m; background-color: black; color: white; display: flex; justify-content: center;}
-#svart5 {grid-area: n; background-color: black; color: white; display: flex; justify-content: center;}
-#svart6 {grid-area: o; background-color: black; color: white; display: flex; justify-content: center;}
+#svart1 {grid-area: j; background-color: black; color: white; display: flex; justify-content: center; background-color: black;}
+#svart2 {grid-area: k; background-color: black; color: white; display: flex; justify-content: center; background-color: black;}
+#svart3 {grid-area: l; background-color: black; color: white; display: flex; justify-content: center; background-color: black;}
+#svart4 {grid-area: m; background-color: black; color: white; display: flex; justify-content: center; background-color: black;}
+#svart5 {grid-area: n; background-color: black; color: white; display: flex; justify-content: center; background-color: black;}
+#svart6 {grid-area: o; background-color: black; color: white; display: flex; justify-content: center; background-color: black;}
 
 
 #piano { 
