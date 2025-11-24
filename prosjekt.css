@@ -3,12 +3,12 @@ html, body {
     padding: 0;
 }
 
-/* tok inspirasjon fra et av css-grid eksemplene når jeg skulle fikse bakgrunn, mer spesifikt grid2 */
-
 body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+
+    /* tok inspirasjon fra et av css-grid eksemplene når jeg skulle fikse bakgrunn, mer spesifikt grid2 */
     background-image: url(bilder/wood2.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -53,7 +53,6 @@ p{
 }
 
 
-
 /* W3schools hjalp litt med borders: https://www.w3schools.com/css/css_border_color.asp , https://www.w3schools.com/css/css_border_width.asp */
 
 #hvit1 {grid-area: a; border-color: black white black black; border-style: solid; border-width: 1px; display: flex; justify-content: center; background-color: white;}
@@ -95,6 +94,7 @@ p{
 #svart5 {grid-area: n; background-color: black; color: white; display: flex; justify-content: center; background-color: black;}
 #svart6 {grid-area: o; background-color: black; color: white; display: flex; justify-content: center; background-color: black;}
 
+/* Gir alle id-ene over en grid-area verdi slik at jeg kan lage en piano ved hjelp av grid, justerer også bordersene til de ulike div-boksene slik at pianoet ser fint ut. */
 
 #piano { 
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
