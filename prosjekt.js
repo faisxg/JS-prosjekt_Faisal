@@ -103,15 +103,62 @@ document.addEventListener("keydown", function (event) {
 
 // Her er en lyttefunksjon som vil se etter hvilke noter som er aktive (om Noter[i].aktiv === 1) og vil slutte lyden ved å skippe til slutten (skifter currentTime til 10). For ryddighetens skyld vil den også gjøre de "aktive" (1) notene "inaktive" (0) på slutten av if-setningen, det gir ikke mening at den skal stå på 1 (altså aktiv) etter at den er ute av spill.
 
-document.addEventListener("keyup", function (number) {
-    for (let i = 0; i < Noter.length; i++) {
-        
-        // KI ga meg en påminnelse om at i en if-setning er det enten == eller === som gjelder. https://chatgpt.com/c/6924db57-19c4-8332-b955-bdd4b7929d6e
-        
-        if (Noter[i].aktiv === 1) {
-            sample[arrayNr][i].currentTime = 10;
-            Noter[i].aktiv = 0
+document.addEventListener("keyup", function (event) {
+    function Release(tangentNr) {
+        for (let i = 0; i < Noter.length; i++) {
+            
+            // KI ga meg en påminnelse om at i en if-setning er det enten == eller === som gjelder. https://chatgpt.com/c/6924db57-19c4-8332-b955-bdd4b7929d6e
+            
+            if (Noter[i].aktiv === 1) {
+                sample[arrayNr][tangentNr].currentTime = 10;
+                Noter[tangentNr].aktiv = 0;
+            }
         }
+    }
+    if (event.key === "a") {
+        Release(14);
+    }
+    if (event.key === "2") {
+        Release(13);
+    }
+    if (event.key === "s") {
+        Release(12);
+    }
+    if (event.key === "3") {
+        Release(11);
+    }
+    if (event.key === "d") {
+        Release(10);
+    }
+    if (event.key === "f") {
+        Release(9);
+    }
+    if (event.key === "5") {
+        Release(8);
+    }
+    if (event.key === "g") {
+        Release(7);
+    }
+    if (event.key === "6") {
+        Release(6);
+    }
+    if (event.key === "h") {
+        Release(5);
+    }
+    if (event.key === "7") {
+        Release(4);
+    }
+    if (event.key === "j") {
+        Release(3);
+    }
+    if (event.key === "k") {
+        Release(2);
+    }
+    if (event.key === "9") {
+        Release(1);
+    }
+    if (event.key === "l") {
+        Release(0);
     }
 })
 
