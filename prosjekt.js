@@ -4,6 +4,7 @@ const sample =[
     [new Audio("lyder/E.mp3"), new Audio("lyder/Dm.mp3"), new Audio("lyder/D.mp3"), new Audio("lyder/Cm.mp3"), new Audio("lyder/C.mp3"), new Audio("lyder/B.mp3"), new Audio("lyder/Am.mp3"), new Audio("lyder/A.mp3"), new Audio("lyder/Gm.mp3"), new Audio("lyder/G.mp3"), new Audio("lyder/Fm.mp3"), new Audio("lyder/F.mp3"), new Audio("lyder/E2.mp3"), new Audio("lyder/Dm2.mp3"), new Audio("lyder/D2.mp3")], 
     [new Audio("lyder2/E.mp3"), new Audio("lyder2/Dm.mp3"), new Audio("lyder2/D.mp3"), new Audio("lyder2/Cm.mp3"), new Audio("lyder2/C.mp3"), new Audio("lyder2/B.mp3"), new Audio("lyder2/Am.mp3"), new Audio("lyder2/A.mp3"), new Audio("lyder2/Gm.mp3"), new Audio("lyder2/G.mp3"), new Audio("lyder2/Fm.mp3"), new Audio("lyder2/F.mp3"), new Audio("lyder2/E2.mp3"), new Audio("lyder2/Dm2.mp3"), new Audio("lyder2/D2.mp3")]
 ]; 
+
 let arrayNr = 0;
 
 let button = document.getElementById("Switch"); 
@@ -13,9 +14,9 @@ let Background = ["url(bilder/wood2.jpg)", "url(bilder/synth.jpg)"]; // Bakgrunn
 
 // Lyttefunksjon for hver gang knappen der det står "switch mode" trykkes ned. Her lages det en verdi for arrayindekset, og i forhold til dette indekset byttes også bakgrunnen og hvilken modus som oppgis.
 
-button.addEventListener("click", function (change) {
+button.addEventListener("click", function () {
     arrayNr = arrayNr + 1;
-    if (arrayNr > 1) {
+    if (arrayNr > sample.length - 1) {
         arrayNr = 0
     };
 
@@ -23,7 +24,6 @@ button.addEventListener("click", function (change) {
     document.getElementById("body").style.backgroundImage = Background[arrayNr]; 
     // https://www.w3schools.com/js/js_htmldom_css.asp (hjalp med å finne ut hvordan jeg kan endre css gjennom js)
 })
-
 
 // Selve funksjonaliteten til pianoet skjer her:
 
@@ -44,15 +44,19 @@ let Noter = [
     {note: "3", aktiv: 0},
     {note: "s", aktiv: 0},
     {note: "2", aktiv: 0},
-    {note: "a", aktiv: 0},
+    {note: "a", aktiv: 0}
 ]
 
 // Her er en lyttefunksjon der den ser etter nedtrykk av taster, det gjelder deretter alle taster. Lager en funksjon som spiller lydene fra den første matrisen basert på en variabel (arrayNr defineres tidligere i koden, skifter basert på om man trykker på switch mode knappen). Denne funksjonen bruker jeg under if-setningene, som sammenlikner nedtrykket tast (event.key), og hvilken tast som er gyldig. Hvis if-setningen går gjennom, vil den kjøre den generelle funksjonen som ble lagd på begynnelsen, her er delen der det var viktig å få like indexer for like noter/tangenter, dette gjør funksjonen mer generell.
+
+let sekvens = []
 
 document.addEventListener("keydown", function (event) {
     function Play(tangentNr) {
         sample[arrayNr][tangentNr].play();
         Noter[tangentNr].aktiv = 1;
+        sekvens.push(Noter[tangentNr].note)
+        console.table(sekvens) 
     }
         if (event.key === "a") {
             Play(14);
